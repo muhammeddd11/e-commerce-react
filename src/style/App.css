@@ -89,7 +89,7 @@
 .btn-order:hover,.btn-order:active{
   background-color: #f76707;
 }
-.product-details{
+.products-details{
   padding:1rem 2rem;
   
 }
@@ -112,13 +112,17 @@
 }
 /******************************************/
 /***** product details design ******/
+.product-details{
+  position: absolute;
+  width: 100rem;
+  top:30vh;
+}
 .product-details-container{
   background-color:#ffe8cc;
   display:flex;
   align-items: center;
   justify-content: center;
-  position:absolute;
-  padding:2rem 4rem;
+  padding:4rem 8rem;
 
 
 }
@@ -127,4 +131,40 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+.quantity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+}
+.add-to-cart{
+  display:block;
+  margin-top: 1rem;
+  background-color: #fd7e14;
+  padding:0.5rem 1rem;
+  border-radius:9px;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor:pointer;
+}
+.add-to-cart:hover{
+  background-color: #f76707;
+}
+.text-info,
+.description,
+.stock,
+.barnd-name,
+.warranty-information,
+.shipping-information,
+.availability-in-stock,
+.return-policy,
+.price,
+.discount{
+  font-size:1.6rem;
+  margin-bottom:1rem;
+  font-weight: 600;
+}
+.order{
+  font-size:1.6rem;
 }

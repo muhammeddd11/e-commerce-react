@@ -2,7 +2,7 @@ export default function Card({ product, handleActive }) {
   return (
     <figure className="card">
       <img src={product.thumbnail} alt={`product ${product.title}`} />
-      <div className="product-details">
+      <div className="products-details">
         <figcaption className="product-name">{product.title}</figcaption>
         <p className="product-category">{product.category}</p>
         <p className="product-price">

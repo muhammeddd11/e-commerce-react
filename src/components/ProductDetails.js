@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 
-export default function ProductDetails({ productID }) {
+export default function ProductDetails({
+  productID,
+  handleCloseDetail,
+  addToCart,
+}) {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(productID);
   useEffect(
     function () {
       async function getProductDetails() {
@@ -23,6 +26,21 @@ export default function ProductDetails({ productID }) {
       {!isLoading && product && (
         <section className="product-details">
           <div className="container product-details-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon close-icon"
+              viewBox="0 0 512 512"
+              onClick={handleCloseDetail}
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="32"
+                d="M368 368L144 144M368 144L144 368"
+              />
+            </svg>
             <div className="img-section">
               <img src={`${product?.thumbnail}`} alt={`${product?.title}`} />
             </div>
@@ -41,20 +59,30 @@ export default function ProductDetails({ productID }) {
                   {product?.availabilityStatus}
                 </p>
                 <p className="return-policy">{product?.returnPolicy}</p>
-                <p className="price">{product?.price}</p>
+                <p className="price">{product?.price}$</p>
                 <p className="discount">{product?.discout}</p>
               </div>
-              <div className="checkout">
-                <input
-                  type="range"
-                  className="order-quantity"
-                  min={0}
-                  step={1}
-                  max={product.stock}
-                  onChange={setQuantity}
-                />
-                <label className="order">{quantity}</label>
-                <button className="check-out">Check out</button>
+              <div className="add-cart">
+                <div className="quantity">
+                  <input
+                    type="range"
+                    className="order-quantity"
+                    value={quantity}
+                    min={0}
+                    step={1}
+                    max={product.stock}
+                    onChange={(e) => setQuantity(Number(e.target.value))}
+                  />
+                  <label className="order">
+                    <strong>{quantity} </strong>unit(s)
+                  </label>
+                </div>
+                <button
+                  className="add-to-cart"
+                  onClick={() => addToCart(product)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>

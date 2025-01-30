@@ -367,11 +367,19 @@ const intialData = [
 function App() {
   const [isOpen, setIsOpen] = useState(true);
   const [active, setActive] = useState(null);
+  const [cart, setCart] = useState([]);
   function handleActive(id) {
     setActive(id);
   }
   function handleIsOpen() {
     setIsOpen((open) => !open);
+  }
+  function handleCloseDetail() {
+    setActive(null);
+  }
+  function addToCart(product) {
+    setCart([...cart, product]);
+    handleCloseDetail();
   }
   return (
     <>
@@ -381,7 +389,13 @@ function App() {
         {isOpen && <AsideBar handleIsOpen={handleIsOpen} />}
         <div className="container product-container grid grid--3-cols">
           <DisplayCard data={intialData} handleActive={handleActive} />
-          {active && <ProductDetails productID={active} />}
+          {active && (
+            <ProductDetails
+              productID={active}
+              handleCloseDetail={handleCloseDetail}
+              addToCart={addToCart}
+            />
+          )}
         </div>
       </main>
     </>
