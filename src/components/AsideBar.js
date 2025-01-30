@@ -1,10 +1,11 @@
-export default function AsideBar() {
+export default function AsideBar({ handleIsOpen }) {
   return (
     <aside className="aside-bar">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon close-icon"
         viewBox="0 0 512 512"
+        onClick={handleIsOpen}
       >
         <path
           fill="none"

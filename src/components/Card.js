@@ -1,4 +1,4 @@
-export default function Card({ product }) {
+export default function Card({ product, handleActive }) {
   return (
     <figure className="card">
       <img src={product.thumbnail} alt={`product ${product.title}`} />
@@ -15,7 +15,12 @@ export default function Card({ product }) {
           Minimum quantity:{" "}
           <strong>{product.minimumOrderQuantity} unit(s)</strong>
         </p>
-        <button className="btn-order">Order</button>
+        <button
+          className="btn-order"
+          onClick={() => handleActive(Number(product.id))}
+        >
+          Order
+        </button>
       </div>
     </figure>
   );

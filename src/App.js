@@ -3,6 +3,9 @@ import "./style/general.css";
 import Header from "./components/Header";
 import AsideBar from "./components/AsideBar";
 import DisplayCard from "./components/DisplayCard";
+import { useState } from "react";
+import ProductDetails from "./components/ProductDetails";
+
 const intialData = [
   {
     id: 1,
@@ -362,14 +365,23 @@ const intialData = [
   },
 ];
 function App() {
+  const [isOpen, setIsOpen] = useState(true);
+  const [active, setActive] = useState(null);
+  function handleActive(id) {
+    setActive(id);
+  }
+  function handleIsOpen() {
+    setIsOpen((open) => !open);
+  }
   return (
     <>
       <Header />
 
       <main className="main grid grid--3-cols">
-        <AsideBar />
+        {isOpen && <AsideBar handleIsOpen={handleIsOpen} />}
         <div className="container product-container grid grid--3-cols">
-          <DisplayCard data={intialData} />
+          <DisplayCard data={intialData} handleActive={handleActive} />
+          {active && <ProductDetails productID={active} />}
         </div>
       </main>
     </>
