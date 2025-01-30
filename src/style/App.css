@@ -1,0 +1,111 @@
+/******************************************/
+/***** general design ******/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/******************************************/
+/***** header design ******/
+.main-header{
+  height: var(--header-main);
+  background-color: #ffe8cc;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding:0 1rem;
+}
+
+.logo-text{
+  font-size:3rem;
+  font-family: "Playfair Display",serif;
+}
+.search-block{
+  display: flex;
+  align-items: center;
+}
+.search{
+  width:30rem;
+  padding:0.3rem 0.3rem;
+  border:1px solid #495057;
+}
+
+.search-icon{
+  border:1px solid #495057;
+}
+.cart-icon{
+  height:2.5rem;
+  width:2.5rem;
+}
+.profile-block{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+.user-name{
+  font-size:2rem;
+}
+.user-img{
+  width:4rem;
+  border-radius:50%;
+}
+/******************************************/
+/***** aside design ******/
+.aside-bar{
+  background-color: #ffe8cc;
+  padding:2rem 2rem;
+  overflow: hidden;
+  position:relative;
+
+  /* display:none;   */
+}
+.categories{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2rem;
+}
+.close-icon{
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+}
+/******************************************/
+/***** product design ******/
+
+.product-container{
+  padding:2rem 0;
+}
+.card{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.134);
+}
+.btn-order{
+  padding:0.5rem 2rem;
+  color:#fff;
+  background-color: #fd7e14;
+  border: 1px solid #fff;
+  border-radius:3px;
+  cursor:pointer;
+  transition: all 0.3s;
+
+}
+.btn-order:hover,.btn-order:active{
+  background-color: #f76707;
+}
+.product-details{
+  padding:1rem 2rem;
+  
+}
+.product-name{
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+.product-category{
+  display:inline-block;
+  padding:1rem;
+  background-color: #ffe8cc;
+  border-radius:100px;
+  font-size:1.2rem;
+  margin-bottom: 1rem;
+}
+.product-price,.product-rating,.order-policy{
+  font-size:1.6rem;
+  margin-bottom:1rem;
+}

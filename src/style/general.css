@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:#495057;
+  }
+  :root{
+    --header-main:5rem;
+  }
+  html{
+    font-size: 62.5%;
+  }
+  body{
+    height: 100vh;
+  }
+  .icon{
+    width:2.5rem;
+    height: 2.3rem;
+    cursor:pointer;
+  }
+  .main{
+    height:calc(100vh - var(--header-main));
+  }
+  .btn:link,.btn:visited{
+    padding:0.5rem 1rem;
+    display:inline-block;
+    font-size:1.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  
+    
+  }
+  .btn:hover,.btn:active{
+    box-shadow: inset 0 -3px 0 rgba(247, 103, 7, 0.701);
+    color: #495057;
+  }
+  .container{
+    width:75%;
+    margin: auto auto;
+  }
+  .grid{
+    display:grid;
+    gap:8rem;
+  }
+  .grid--2-cols{
+    grid-template-columns:8rem 1fr;
+  
+  }
+  .grid--3-cols{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  strong{
+    font-weight: 600;
+  }
